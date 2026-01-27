@@ -1,22 +1,22 @@
 #include <iostream>
-#include <string>
 using namespace std;
 
 class Account {
 public:
-    string name;
+    char name[100]; 
     int accNo;
     float balance;
 
     void inputAccount() {
-        cout << "Enter account holder name: ";
-        cin.ignore();
-        getline(cin, name);
+        cout << "Enter account holder name: "<<"  ";
+        
+        cin.ignore(); 
+        cin.getline(name, 100); 
 
-        cout << "Enter account number: ";
+        cout << "Enter account number: "<<"  ";
         cin >> accNo;
 
-        cout << "Enter balance: ";
+        cout << "Enter balance: "<<"  ";
         cin >> balance;
     }
 };
@@ -26,12 +26,12 @@ public:
     float interestRate;
 
     void inputSavings() {
-        cout << "Enter interest rate (%): ";
+        cout << "Enter interest rate (%): "<<" ";
         cin >> interestRate;
     }
 
     void show() {
-        cout << " Savings Account ";
+        cout << "Savings Account" << endl;
         cout << "Name: " << name << endl;
         cout << "Account No: " << accNo << endl;
         cout << "Balance: " << balance << endl;
@@ -44,12 +44,12 @@ public:
     float overdraftLimit;
 
     void inputCurrent() {
-        cout << "Enter overdraft limit: ";
+        cout << "Enter overdraft limit: "<<"  ";
         cin >> overdraftLimit;
     }
 
     void show() {
-        cout << " Current Account ";
+        cout << "Current Account" << endl;
         cout << "Name: " << name << endl;
         cout << "Account No: " << accNo << endl;
         cout << "Balance: " << balance << endl;
@@ -61,12 +61,12 @@ int main() {
     SavingsAccount sa;
     CurrentAccount ca;
 
-    cout << "Enter Savings Account Details\n";
+    cout << "Enter Savings Account Details"<<endl;
     sa.inputAccount();
     sa.inputSavings();
     sa.show();
 
-    cout << "Enter Current Account Details\n";
+    cout << "Enter Current Account Details"<<endl;
     ca.inputAccount();
     ca.inputCurrent();
     ca.show();
