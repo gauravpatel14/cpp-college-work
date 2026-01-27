@@ -4,7 +4,7 @@ using namespace std;
 class sports {
 public:
     int score = 80;
-    char name;
+    char name[50];
     int age;
 };
 
@@ -16,16 +16,17 @@ public:
 class result : public Academics {
 public:
     void Total() {
-        cout << "Name of Sports: ";
+        cout << "Enter Name: ";
         cin >> name;
-        
+                 
         cout << "Enter age: ";
         cin >> age;
 
         if (age >= 18) {
+            cout << "Name: " << name << endl;
             cout << "Total Marks = " << score + marks << endl;
         } else {
-            cout << "not eligible" << endl;
+            cout << "Not eligible" << endl;
         }
     }
 };
